@@ -20,7 +20,7 @@
 
 ### Data Source
 Stock Market: https://www.kaggle.com/borismarjanovic/price-volume-data-for-all-us-stocks-etfs
-New Source: find google scraper
+New Source: find google scraper? use the 2Sigma one for now, finetune later
 
 ### Notes
 
