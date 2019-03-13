@@ -29,11 +29,12 @@ New Source: find google scraper?
 - Low: min price of the day
 - Last: last price of the share of the day
 - Volume: total trade quantity of the day, includes bought and sold shares
-- Turnover/Lacs: turnover 
+- Turnover/Lacs: number of times inventory has been turned over/sold and replaced in a year (high ratios implies either strong sales or insufficient inventory)
 
 Note:
 - the market is closed on weekends and public holidays
 - profit/loss calculation determined by the closing price of the stock for the day
+
 
 ## Notes
 General forecasting model process:
@@ -56,7 +57,9 @@ Pandas has dedicated libraries for handling TS objects:
 Auto-Regressive Integrated Moving Averages (ARIMA): forecasting for a stationary time series is a linear equation, with terms p, q, and d (# of Auto-Regressive terms, # of Moving Average terms, # of differences)
 - use autocorrelation function to determine AR terms,
 - use partial autocorrelation function to determine MA terms
-'''from statsmodels.tsa.stattools import acf, pacf'''
+```
+from statsmodels.tsa.stattools import acf, pacf
+```
 
 ### Time Series Prediction Methods
 
@@ -71,4 +74,4 @@ model.fit(x_train,y_train)
 Note: regression model overfits to the date and month column, instead of taking previous day's data into consideration 
 
 **K-Nearest Neighbour (kNN)**
-
+Find similarity between new data points and old data points based on independent variables
