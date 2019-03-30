@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 
 
-BASE = "https://news.google.com/news/rss"
+BASE = "https://news.google.com/news"
 TOPICS = ["WORLD", "NATION", "BUSINESS", "TECHNOLOGY", "ENTERTAINMENT", "SPORTS", "SCIENCE", "HEALTH"]
 TOPIC_URL = "/headlines/section/topic"
 GEO_URL = "/headlines/section/geo"
@@ -27,6 +27,13 @@ class GNews:
                               'q': self.query,
                               'hl': self.language}
     def send_request: 
+
+        resp = requests.get(BASE, params=self.params)
+        soup = BeautifulSoup(resp.content, 'html5lib')
+
+        articles = self.scrape_feed(soup)
+
+
     	entries = soup.findAll('entry')
     	news_articles = []
 
